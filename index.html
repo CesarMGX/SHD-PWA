@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Edu-Recorder</title>
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Lato:400,700|Quicksand:600,700&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+    <!-- CSS de la Aplicación -->
+    <link rel="stylesheet" href="css/animate.css">
+    <link rel="stylesheet" href="css/style.css">
+
+    <!-- Manifest PWA -->
+    <link rel="manifest" href="manifest.json">
+    <link rel="shortcut icon" type="image/png" href="img/icons/icon-72x72.png">
+    
+    <!-- Color de tema para navegadores móviles (Verde) -->
+    <meta name="theme-color" content="#15803d">
+</head>
+<body>
+
+    <!-- Encabezado Principal (Verde) -->
+    <header class="header">
+        <div class="brand">
+            <img src="img/gorrito.png" alt="Edu-Recorder Logo" class="brand-logo">
+            <h1>Edu-Recorder</h1>
+        </div>
+
+        <div class="header-actions">
+            <!-- Indicador de red -->
+            <span id="network-status" class="network-badge online">
+                <i class="fas fa-wifi"></i> Online
+            </span>
+
+            <!-- Botón de Notificaciones (Naranja) -->
+            <button id="notif-btn" class="btn-icon btn-orange" title="Activar / Probar Notificaciones">
+                <i class="fas fa-bell"></i>
+            </button>
+
+            <!-- Botón de Nueva Tarea (Naranja) -->
+            <button id="add-task-btn" class="btn-icon btn-orange" title="Agregar Nueva Tarea">
+                <i class="fas fa-plus"></i>
+            </button>
+        </div>
+    </header>
+
+    <!-- Contenedor Principal -->
+    <main class="container">
+
+        <!-- Barra de Filtros (Verde/Naranja) -->
+        <div class="filter-bar">
+            <button class="filter-btn active" data-filter="all">Todas las Tareas</button>
+            <button class="filter-btn filter-orange" data-filter="pending">Pendientes</button>
+            <button class="filter-btn" data-filter="completed">Completadas / Entregadas</button>
+        </div>
+
+        <!-- Lista de Tareas (Tarjetas Formales) -->
+        <div id="task-list" class="tasks-grid">
+            <!-- Las tareas se renderizan dinámicamente -->
+        </div>
+
+        <!-- Estado Vacío -->
+        <div id="empty-state" class="empty-state animated fadeIn" style="display: none;">
+            <i class="fas fa-clipboard-check"></i>
+            <h3>No tienes tareas en esta sección</h3>
+            <p>Haz clic en el botón de agregar (+) para crear una nueva entrega o pendiente escolar.</p>
+        </div>
+
+    </main>
+
+    <!-- Modal Formal para Agregar Tarea -->
+    <div id="task-modal" class="modal-overlay">
+        <div class="modal-content animated zoomIn fast">
+            <div class="modal-header">
+                <h2><i class="fas fa-file-signature"></i> Nueva Tarea Académica</h2>
+                <button id="close-modal-btn" class="btn-icon btn-green" style="width:32px; height:32px; font-size:0.9rem;">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+
+            <form id="task-form">
+                <div class="form-group">
+                    <label for="task-title">Título de la Tarea / Actividad</label>
+                    <input type="text" id="task-title" class="form-input" placeholder="Ej: Reporte de Práctica de PWA" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="task-subject">Materia / Asignatura</label>
+                    <select id="task-subject" class="form-input" required>
+                        <option value="PWA">PWA (Aplicaciones Web Progresivas)</option>
+                        <option value="Programación">Programación Web</option>
+                        <option value="Bases de Datos">Bases de Datos</option>
+                        <option value="Redes">Redes y Servicios</option>
+                        <option value="General">Materia General</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="task-date">Fecha Límite de Entrega</label>
+                    <input type="date" id="task-date" class="form-input" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="task-desc">Descripción / Requisitos de la Entrega</label>
+                    <textarea id="task-desc" class="form-input" rows="3" placeholder="Ingresa los detalles o rúbrica de la tarea..."></textarea>
+                </div>
+
+                <button type="submit" class="btn-submit">
+                    <i class="fas fa-save"></i> Guardar y Notificar Tarea
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Pie de página: Fondo Verde, Letras Blancas -->
+    <footer class="main-footer">
+        <p><i class="fas fa-graduation-cap"></i> Edu-Recorder &copy; 2026</p>
+    </footer>
+
+    <!-- Scripts de la Aplicación -->
+    <script src="js/libs/jquery.js"></script>
+    <script src="js/app.js"></script>
+
+</body>
+</html>
