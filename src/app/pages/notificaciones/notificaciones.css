@@ -1,0 +1,212 @@
+.page-container {
+  padding: 1.5rem;
+  max-width: 850px;
+  margin: 0 auto;
+}
+
+.page-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.header-titles h2 {
+  margin: 0 0 0.35rem 0;
+  color: #1e293b;
+}
+
+.header-titles p {
+  margin: 0;
+  color: #64748b;
+  font-size: 0.95rem;
+}
+
+.header-actions {
+  display: flex;
+  gap: 0.6rem;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.btn-sub {
+  background: #2563eb;
+  color: #ffffff;
+  border: 1px solid #2563eb;
+  padding: 0.5rem 0.9rem;
+  border-radius: 8px;
+  font-size: 0.85rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.btn-sub:hover {
+  background: #1d4ed8;
+}
+
+.btn-sub.activo {
+  background: #dcfce7;
+  color: #15803d;
+  border-color: #86efac;
+}
+
+.btn-action {
+  background: #ffffff;
+  color: #2563eb;
+  border: 1px solid #cbd5e1;
+  padding: 0.5rem 0.9rem;
+  border-radius: 8px;
+  font-size: 0.85rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.btn-action:hover {
+  background: #eff6ff;
+  border-color: #93c5fd;
+}
+
+.status-banner {
+  background: #eff6ff;
+  color: #1e40af;
+  border: 1px solid #bfdbfe;
+  padding: 0.75rem 1rem;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  margin-bottom: 1.25rem;
+  animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-4px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.notificaciones-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+}
+
+.notificacion-card {
+  display: flex;
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
+  overflow: hidden;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.notificacion-card:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.06);
+}
+
+.notificacion-card.no-leida {
+  background: #f8fafc;
+  border-left-width: 0;
+}
+
+.card-indicator {
+  width: 5px;
+  flex-shrink: 0;
+}
+
+.card-indicator.vencimiento {
+  background-color: #ef4444;
+}
+
+.card-indicator.finalizada {
+  background-color: #10b981;
+}
+
+.card-indicator.recordatorio {
+  background-color: #3b82f6;
+}
+
+.card-body {
+  padding: 1rem 1.25rem;
+  flex: 1;
+}
+
+.card-header-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.4rem;
+}
+
+.tipo-badge {
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 0.2rem 0.55rem;
+  border-radius: 6px;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+
+.tipo-badge.vencimiento {
+  background: #fee2e2;
+  color: #b91c1c;
+}
+
+.tipo-badge.finalizada {
+  background: #d1fae5;
+  color: #047857;
+}
+
+.tipo-badge.recordatorio {
+  background: #dbeafe;
+  color: #1d4ed8;
+}
+
+.fecha-texto {
+  font-size: 0.8rem;
+  color: #94a3b8;
+}
+
+.notif-titulo {
+  margin: 0 0 0.3rem 0;
+  font-size: 1rem;
+  color: #0f172a;
+}
+
+.notif-mensaje {
+  margin: 0;
+  font-size: 0.9rem;
+  color: #475569;
+  line-height: 1.45;
+}
+
+.card-action-row {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 0.85rem;
+  padding-top: 0.75rem;
+  border-top: 1px solid #f1f5f9;
+}
+
+.btn-enviar-notif {
+  background-color: #2563eb;
+  color: #ffffff;
+  border: none;
+  padding: 0.45rem 0.95rem;
+  border-radius: 6px;
+  font-size: 0.85rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+.btn-enviar-notif:hover {
+  background-color: #1d4ed8;
+}
+
+.btn-enviar-notif:active {
+  transform: scale(0.98);
+}

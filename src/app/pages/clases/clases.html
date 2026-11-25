@@ -1,0 +1,26 @@
+<div class="page-container">
+  <div class="page-header">
+    <h2>Mis Clases Inscritas</h2>
+    <p>Semestre Actual: <strong>Agosto - Diciembre 2026</strong> | Sincronizado con Open Library API</p>
+  </div>
+
+  <div *ngIf="cargando()" class="loading-state">
+    <div class="spinner"></div>
+    <p>Cargando materias desde la API REST...</p>
+  </div>
+
+  <div *ngIf="!cargando()" class="cards-grid">
+    <div class="card" *ngFor="let clase of clases()">
+      <div class="card-top">
+        <span class="badge">{{ clase.aula }}</span>
+        <span class="creditos">{{ clase.creditos }} Creditos</span>
+      </div>
+      <h3>{{ clase.nombre }}</h3>
+      <p class="profesor">Profesor: {{ clase.profesor }}</p>
+      <div class="card-footer">
+        <span>Promedio actual:</span>
+        <span class="promedio" [class.alto]="clase.promedio >= 90">{{ clase.promedio }}/100</span>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,6 +1,22 @@
 {
   "$schema": "./node_modules/@angular/service-worker/config/schema.json",
   "index": "/index.html",
+  "dataGroups": [
+    {
+      "name": "api-portal-escolar",
+      "urls": [
+        "/api/**",
+        "http://localhost:3000/api/**",
+        "https://openlibrary.org/subjects/**"
+      ],
+      "cacheConfig": {
+        "strategy": "freshness",
+        "maxSize": 20,
+        "maxAge": "1d",
+        "timeout": "2s"
+      }
+    }
+  ],
   "assetGroups": [
     {
       "name": "app",
@@ -21,7 +37,9 @@
       "installMode": "lazy",
       "updateMode": "prefetch",
       "resources": {
-        "files": ["/**/*.(svg|cur|jpg|jpeg|png|apng|webp|avif|gif|otf|ttf|woff|woff2)"]
+        "files": [
+          "/**/*.(svg|cur|jpg|jpeg|png|apng|webp|avif|gif|otf|ttf|woff|woff2)"
+        ]
       }
     }
   ]

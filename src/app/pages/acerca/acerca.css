@@ -1,0 +1,60 @@
+.page-container {
+  padding: 1.5rem;
+  max-width: 650px;
+  margin: 0 auto;
+}
+
+.about-card {
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 2rem;
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.08);
+  text-align: center;
+}
+
+.about-icon {
+  font-size: 3.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.about-card h2 {
+  margin: 0 0 0.3rem 0;
+  color: #0f172a;
+}
+
+.subtitle {
+  color: #64748b;
+  margin: 0 0 1.5rem 0;
+  font-size: 0.95rem;
+}
+
+.info-block {
+  text-align: left;
+  background: #f8fafc;
+  padding: 1.25rem 1.5rem;
+  border-radius: 10px;
+  border: 1px solid #e2e8f0;
+  margin-bottom: 1.5rem;
+}
+
+.info-block h3 {
+  margin: 0 0 0.75rem 0;
+  font-size: 1.05rem;
+  color: #1e293b;
+}
+
+.info-block ul {
+  margin: 0;
+  padding-left: 1.25rem;
+  color: #475569;
+  font-size: 0.9rem;
+  line-height: 1.7;
+}
+
+.footer-block p {
+  margin: 0;
+  color: #94a3b8;
+  font-size: 0.85rem;
+}
+

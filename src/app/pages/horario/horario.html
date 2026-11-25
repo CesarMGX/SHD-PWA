@@ -1,0 +1,31 @@
+<div class="page-container">
+  <div class="page-header">
+    <h2>Horario Semanal de Clases</h2>
+    <p>Grupo: <strong>ISC-801</strong> | Turno: <strong>Matutino</strong></p>
+  </div>
+
+  <div class="table-responsive">
+    <table class="horario-table">
+      <thead>
+        <tr>
+          <th>Hora</th>
+          <th>Lunes</th>
+          <th>Martes</th>
+          <th>Miercoles</th>
+          <th>Jueves</th>
+          <th>Viernes</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let s of horario">
+          <td class="hora-cell">{{ s.hora }}</td>
+          <td [class.materia-activa]="s.lunes !== 'Libre'">{{ s.lunes }}</td>
+          <td [class.materia-activa]="s.martes !== 'Libre'">{{ s.martes }}</td>
+          <td [class.materia-activa]="s.miercoles !== 'Libre'">{{ s.miercoles }}</td>
+          <td [class.materia-activa]="s.jueves !== 'Libre'">{{ s.jueves }}</td>
+          <td [class.materia-activa]="s.viernes !== 'Libre'">{{ s.viernes }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

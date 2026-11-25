@@ -1,0 +1,35 @@
+<div class="page-container">
+  <div class="profile-card">
+    <div class="profile-header">
+      <div class="avatar">JP</div>
+      <div class="header-info">
+        <h2>{{ estudiante.nombre }}</h2>
+        <span class="matricula">Matricula: {{ estudiante.matricula }}</span>
+        <span class="status-badge">{{ estudiante.estatus }}</span>
+      </div>
+    </div>
+
+    <div class="profile-details">
+      <div class="detail-item">
+        <span class="label">Carrera:</span>
+        <span class="value">{{ estudiante.carrera }}</span>
+      </div>
+      <div class="detail-item">
+        <span class="label">Semestre:</span>
+        <span class="value">{{ estudiante.semestre }}</span>
+      </div>
+      <div class="detail-item">
+        <span class="label">Correo Institucional:</span>
+        <span class="value">{{ estudiante.correo }}</span>
+      </div>
+      <div class="detail-item">
+        <span class="label">Promedio General:</span>
+        <span class="value destacado">{{ estudiante.promedioGeneral }}</span>
+      </div>
+      <div class="detail-item">
+        <span class="label">Avance de Creditos:</span>
+        <span class="value">{{ estudiante.creditosAprobados }} / {{ estudiante.creditosTotales }} (81%)</span>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,51 @@
+<div class="page-container">
+  <div class="page-header">
+    <div class="header-titles">
+      <h2>Notificaciones</h2>
+      <p>Avisos sobre vencimientos y entregas completadas</p>
+    </div>
+    <div class="header-actions">
+      <button
+        class="btn-sub"
+        [class.activo]="pushService.enabled()"
+        (click)="toggleSuscripcion()"
+      >
+        {{ pushService.enabled() ? 'Notificaciones activas' : 'Activar notificaciones' }}
+      </button>
+      <button class="btn-action" (click)="marcarTodasComoLeidas()">Marcar como leidas</button>
+    </div>
+  </div>
+
+  <div *ngIf="pushService.lastResult()" class="status-banner">
+    {{ pushService.lastResult() }}
+  </div>
+
+  <div class="notificaciones-list">
+    <div
+      class="notificacion-card"
+      *ngFor="let item of notificaciones"
+      [class.no-leida]="!item.leida"
+    >
+      <div class="card-indicator" [ngClass]="item.tipo"></div>
+      <div class="card-body">
+        <div class="card-header-row">
+          <span class="tipo-badge" [ngClass]="item.tipo">
+            {{ item.tipo === 'vencimiento' ? 'Vencimiento proximo' : item.tipo === 'finalizada' ? 'Completada' : 'Recordatorio' }}
+          </span>
+          <span class="fecha-texto">{{ item.fecha }}</span>
+        </div>
+        <h4 class="notif-titulo">{{ item.titulo }}</h4>
+        <p class="notif-mensaje">{{ item.mensaje }}</p>
+        <div class="card-action-row">
+          <button
+            type="button"
+            class="btn-enviar-notif"
+            (click)="enviarNotificacion(item)"
+          >
+            Enviar notificación
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

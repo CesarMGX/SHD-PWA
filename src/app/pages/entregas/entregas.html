@@ -1,0 +1,23 @@
+<div class="page-container">
+  <div class="page-header">
+    <h2>Entregas y Tareas Pendientes</h2>
+    <p>Revisa las fechas limite de entrega de tus materias</p>
+  </div>
+
+  <div class="tareas-list">
+    <div class="tarea-item" *ngFor="let tarea of tareas" [class.completada]="tarea.completada">
+      <div class="checkbox-col">
+        <input type="checkbox" [checked]="tarea.completada" (change)="toggleTarea(tarea)" />
+      </div>
+      <div class="info-col">
+        <h4 [class.tachado]="tarea.completada">{{ tarea.titulo }}</h4>
+        <span class="materia">{{ tarea.materia }}</span>
+      </div>
+      <div class="fecha-col">
+        <span class="fecha" [class.urgente]="tarea.urgente && !tarea.completada">
+          Entrega: {{ tarea.fechaEntrega }}
+        </span>
+      </div>
+    </div>
+  </div>
+</div>
